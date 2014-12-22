@@ -21,6 +21,9 @@ alias start_test_tornado_server="sudo /opt/local/bin/python2.7 hello_world_serve
 alias start_mongo_db="sudo ~/Documents/mongodb-osx-x86_64-2.6.1/bin/mongod"
 alias connect_to_mongo_db="sudo ~/Documents/mongodb-osx-x86_64-2.6.1/bin/mongo"
 
+# start elastics search
+alias start_elasticsearch="elasticsearch --config=/usr/local/opt/elasticsearch/config/elasticsearch.yml"
+
 # git config (this part should be moved in the git config file)
 alias git_log="git log --name-only --pretty=format:'-------------------------------------------------------------%n%n%Cred%H%Creset @%C(yellow)%d%Creset %cn %Cblue(%cr)%Creset %nDate: %ci %n %nSubject: %Cgreen%s%Creset %n%n%b'"
 alias git_log_p="git log -p --pretty=format:'-------------------------------------------------------------%n%n%Cred%H%Creset @%C(yellow)%d%Creset %cn %Cblue(%cr)%Creset %nDate: %C(yellow)%ci%Creset %n %nSubject: %Cgreen%s%Creset %n%n%b'"
@@ -30,6 +33,9 @@ alias glb="git log --pretty=format:'%h:%s' --topo-order --graph"
 
 #ex: git_delete_branch [your_branch]
 alias git_delete_branch="git branch -D "
+alias git_local_branch_condition="git branch -lvv"
+alias git_all_branch_condition="git branch -avv"
+alias git_all_branch_tracing_info="git remote show origin"
 
 # ex: git_remove_from_staging [your file name]
 alias git_remove_from_staging="git reset HEAD^"
@@ -76,6 +82,14 @@ alias restart_apache_on_mavericks='sudo apachectl restart'
 
 # dump db
 alias mysql_dump_mac_all_db='mysqldump -u root -p -h localhost book_store > ./book_store_db.sql'
+
+# find file with name
+# ex: find_by_name '*name*'
+alias find_by_name='find ./ -name '
+alias find_empty_file='find ./ -empty'
+alias find_file_smaller_than_500M='find ./logs/router* -size -500000k'
+alias find_file_larger_than_500M='find ./logs/router* -size +500000k'
+alias find_file_larger_than_1G='find ./logs/router* -size +1000000k'
 
 # open a magnetic link with BitTorrent
 # ex: open_magnetic_link 'your magnetic link'
@@ -147,6 +161,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 export PATH=~/bin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/local/mysql/bin:$PATH
+export JAVA_HOME="/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home"
 
 # evaluating login msg
 #sh /Users/yienge/shell/motd2.sh
