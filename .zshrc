@@ -87,9 +87,9 @@ alias mysql_dump_mac_all_db='mysqldump -u root -p -h localhost book_store > ./bo
 # ex: find_by_name '*name*'
 alias find_by_name='find ./ -name '
 alias find_empty_file='find ./ -empty'
-alias find_file_smaller_than_500M='find ./logs/router* -size -500000k'
-alias find_file_larger_than_500M='find ./logs/router* -size +500000k'
-alias find_file_larger_than_1G='find ./logs/router* -size +1000000k'
+alias find_file_smaller_than_500M='find ./ -size -500000k'
+alias find_file_larger_than_500M='find ./ -size +500000k'
+alias find_file_larger_than_1G='find ./ -size +1000000k'
 
 # open a magnetic link with BitTorrent
 # ex: open_magnetic_link 'your magnetic link'
